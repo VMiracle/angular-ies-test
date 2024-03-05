@@ -28,9 +28,14 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "src/styles.css"
+              "src/styles.css",
+              "bootstrap/bootstrap-4.0.0-dist/css/bootstrap-grid.min.css",
+              "bootstrap/bootstrap-4.0.0-dist/css/bootstrap-reboot.min.css",
+              "bootstrap/bootstrap-4.0.0-dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "bootstrap/bootstrap-4.0.0-dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
