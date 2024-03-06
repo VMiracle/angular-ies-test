@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Nombre</h1>
+<div mat-dialog-content>
+  <p>¿Cuál es tu nombre?</p>
+  <div [formGroup]="form" *ngIf="form !== undefined">
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onExitClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="form?.value" cdkFocusInitial>Ok</button>
+</div>
