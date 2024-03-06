@@ -1,1 +1,18 @@
-<div>Login component</div>
+<div class="login-content">
+  <div class="welcome-group">
+    <div class="welcome-group-content">
+      <div class="welcome-message">Inicio de sesión</div>
+      <div [formGroup]="form" *ngIf="form !== undefined">
+        <mat-form-field appearance="outline" class="full-width-field">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="username" type="text">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width-field">
+          <mat-label>Contraseña</mat-label>
+          <input matInput formControlName="password" type="password">
+        </mat-form-field>
+        <button class="send-button" mat-flat-button color="primary" (click)="login()">Iniciar sesión</button>
+      </div>
+    </div>
+  </div>
+</div>
