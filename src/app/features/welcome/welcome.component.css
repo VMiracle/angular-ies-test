@@ -1,0 +1,49 @@
+.welcome-content {
+  background-image: url('/assets/background.jpg');
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+}
+
+.welcome-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.welcome-message {
+  color: white;
+  text-align: center;
+  font-size: calc(24px + 4vmin);
+  line-height: 1;
+  text-shadow: 1px 1px 2px #000000;
+  font-weight: bold;
+}
+
+.question-message {
+  color: white;
+  text-align: center;
+  font-size: calc(12px + 2vmin);
+  line-height: 3.5;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+.name-message {
+  color: white;
+  text-align: center;
+  font-size: calc(12px + 1vmin);
+  line-height: 3.5;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+.gold-message {
+  color: #FFD700;
+}
+
+.name-button {
+  border-radius: 18px;
+  display: block;
+  margin: auto;
+  color: white;
+}
