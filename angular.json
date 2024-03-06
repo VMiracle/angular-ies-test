@@ -34,6 +34,7 @@
               "bootstrap/bootstrap-4.0.0-dist/css/bootstrap.min.css"
             ],
             "scripts": [
+              "jquery/jquery-3.7.1.min.js",
               "bootstrap/bootstrap-4.0.0-dist/js/bootstrap.min.js"
             ]
           },
