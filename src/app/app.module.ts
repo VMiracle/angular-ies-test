@@ -4,10 +4,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
+import { CharacterChangePipe } from './pipes/character-change.pipe'
+import { LoginComponent } from './login/login.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    CharacterChangePipe
   ],
   imports: [
     BrowserModule,
