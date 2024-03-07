@@ -1,15 +1,17 @@
-import { Component } from '@angular/core'
+import { Component, OnDestroy } from '@angular/core'
 import { MatDialog } from '@angular/material/dialog'
 
 import { NameModalComponent } from '../name-modal/name-modal.component'
+import { Subscription } from 'rxjs'
 
 @Component({
   selector: 'welcome',
   templateUrl: 'welcome.component.html',
   styleUrls: ['welcome.component.css']
 })
-export class WelcomeComponent {
+export class WelcomeComponent implements OnDestroy {
   name?: string
+  dialogSubscription?: Subscription
 
   constructor(public dialog: MatDialog) {}
 
@@ -19,15 +21,21 @@ export class WelcomeComponent {
     })
 
     dialogRef.afterClosed().subscribe(result => {
-      // Must check if the form value is returned
+      // Si no tenemos un resultado válido, no hacemos nada adicional
       if (result === undefined || result === null)
         return
 
-      // Must check if name is among the form fields
+      // Si tenemos un resultado válido, verificamos si el nombre también lo es
       if (result.name === "" || result.name === undefined || result.name === null)
         return
 
       this.name = result.name
     })
+  }
+
+  public ngOnDestroy(): void {
+    // Siempre se deben cerrar las suscripciones al momento de destruir el
+    // componente
+    this.dialogSubscription?.unsubscribe()
   }
 }

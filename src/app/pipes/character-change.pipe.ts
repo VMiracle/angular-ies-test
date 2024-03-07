@@ -2,14 +2,15 @@ import { Pipe, PipeTransform } from '@angular/core'
 
 @Pipe({
   // NOTA: Voy a usar el nombre elegido para el pipe, cambioLetras, en español,
-  //  pero el resto del código y comentarios los dejaré en inglés
+  // pero el resto del código suelo realizarlo en inglés por una cuestión
+  // de costumbre. No obstante, los comentarios los he agregado en español
   name: 'cambioLetras'
 })
 export class CharacterChangePipe implements PipeTransform {
   transform(value: string): string {
-    // In case both lowercase AND uppercase letters should be changed, use the
-    // ig modifier instead of just the g modifier or just swap the commented
-    // and uncommented blocks
+    // En caso de que minúsculas y mayúsculas deban ser cambiadas, se usa el
+    // modificador ig en lugar del modificador g; también pueden cambiarse
+    // los bloques de código comentado y no comentado
     /*
     return value.replace(/a/ig, '4')
       .replace(/e/ig, '3')
