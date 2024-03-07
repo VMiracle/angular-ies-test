@@ -1,0 +1,20 @@
+.toolbar-button {
+  margin-right: 20px;
+}
+
+.active-route {
+  color: #1166e4;
+}
+
+/* Angular Material modifica el tamaño de la barra de tareas dependiendo del
+ tamaño de la pantalla, esto lo quitaré ya que no forma parte del aspecto
+ que quiero darle al ejercicio*/
+@media(max-width: 599px) {
+  .mat-toolbar-multiple-rows {
+    min-height: 64px;
+  }
+
+  .mat-toolbar-row, .mat-toolbar-single-row {
+    height: 64px;
+  }
+}
