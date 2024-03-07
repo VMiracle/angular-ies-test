@@ -1,0 +1,12 @@
+.date-title {
+  font-size: calc(12px + 4vmin);
+  line-height: 1;
+  font-weight: bold;
+}
+
+.date-message {
+  padding: 20px 0;
+  font-size: calc(12px + 1vmin);
+  line-height: 1;
+  font-weight: bold;
+}
