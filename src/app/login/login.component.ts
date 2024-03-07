@@ -1,7 +1,9 @@
 import { Component } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
-import { ApiService } from 'src/services/api.service'
-import { SessionService } from 'src/services/session.service'
+import { Router } from '@angular/router'
+
+import { ApiService } from '../../services/api.service'
+import { SessionService } from '../../services/session.service'
 
 @Component({
   selector: 'login',
@@ -11,7 +13,7 @@ import { SessionService } from 'src/services/session.service'
 export class LoginComponent {
   public form?: FormGroup
 
-  constructor(public formBuilder: FormBuilder, public apiService: ApiService) {}
+  constructor(public formBuilder: FormBuilder, public apiService: ApiService, public sessionService: SessionService, private router: Router) {}
 
   public ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -31,6 +33,9 @@ export class LoginComponent {
     // puede resolverse desde la configuración del servidor. Con el fin de
     // continuar con el ejercicio, al ingresar cualquier formulario válido
     // con usuario y contraseña se considerará que el usuario se conectó
+
+    this.router.navigate(['/app/welcome'])
+    this.sessionService.login()
     
     /*this.serverService.login(this.form.value).subscribe((data) => {
 
