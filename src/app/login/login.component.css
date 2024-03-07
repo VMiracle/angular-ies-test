@@ -1,0 +1,12 @@
+.login-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.login-title {
+  font-size: calc(12px + 4vmin);
+  line-height: 1;
+  font-weight: bold;
+}

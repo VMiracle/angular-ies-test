@@ -1,1 +1,19 @@
+<!--En pantallas grandes mostraré nombre e ícono-->
+<div *ngIf="sessionService.checkSession()">
+  <mat-toolbar class="d-lg-flex d-none app-toolbar">
+    <button class="toolbar-button" mat-flat-button routerLink="/app/welcome" routerLinkActive="active-route"><mat-icon>home</mat-icon> Bienvenida</button>
+    <button class="toolbar-button" mat-flat-button routerLink="/app/conversions" routerLinkActive="active-route"><mat-icon>calculate</mat-icon> Conversiones</button>
+    <button class="toolbar-button" mat-flat-button routerLink="/app/date" routerLinkActive="active-route"><mat-icon>calendar_today</mat-icon> Cálculo de fecha</button>
+    <button class="toolbar-button" mat-flat-button routerLink="/app/form" routerLinkActive="active-route"><mat-icon>assignment</mat-icon> Formulario</button>
+    <button class="toolbar-button" mat-flat-button (click)="logout()"><mat-icon>logout</mat-icon> Cerrar sesión</button>
+  </mat-toolbar>
+  <!--En pantallas más pequeñas solo se mostrará un ícono-->
+  <mat-toolbar class="d-lg-none app-toolbar">
+    <button class="toolbar-button" mat-flat-button routerLink="/app/welcome" routerLinkActive="active-route"><mat-icon>home</mat-icon></button>
+    <button class="toolbar-button" mat-flat-button routerLink="/app/conversions" routerLinkActive="active-route"><mat-icon>calculate</mat-icon></button>
+    <button class="toolbar-button" mat-flat-button routerLink="/app/date" routerLinkActive="active-route"><mat-icon>calendar_today</mat-icon></button>
+    <button class="toolbar-button" mat-flat-button routerLink="/app/form" routerLinkActive="active-route"><mat-icon>assignment</mat-icon></button>
+    <button class="toolbar-button" mat-flat-button (click)="logout()"><mat-icon>logout</mat-icon></button>
+  </mat-toolbar>
+</div>
 <router-outlet></router-outlet>
