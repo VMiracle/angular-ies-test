@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
+import { SessionService } from '../services/session.service'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-ies-test';
+  constructor(public sessionService: SessionService, private router: Router) {}
+
+  public logout(): void {
+    // Para poder mostrar el uso de guardianes, el usuario debe poder cerrar
+    // sesión, aunque esto no forme parte de los detalles del ejercicio
+    this.sessionService.logout()
+    this.router.navigate(['./login'])
+  }
 }

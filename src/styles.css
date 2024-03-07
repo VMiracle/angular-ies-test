@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Utilizado para ocupar todo el espacio de la fila/columna en los formularios */
+.full-width-field {
+  display: block;
+  width: 100%;
+}

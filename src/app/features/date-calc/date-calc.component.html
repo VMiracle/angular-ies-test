@@ -1,0 +1,42 @@
+<div class="date-title">Calcular fecha</div>
+<div class="container" *ngIf="form !== undefined && form !== null" [formGroup]="form">
+  <div class="row">
+    <div class="col-md">
+      <mat-form-field appearance="outline" class="full-width-field">
+        <mat-label>Elige una fecha</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date">
+        <mat-hint>MM/DD/AAAA</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="col-md">
+      <mat-form-field appearance="outline" class="full-width-field">
+        <mat-label>Unidades</mat-label>
+        <mat-select formControlName="unitType">
+          <mat-option [value]="1">Días</mat-option>
+          <mat-option [value]="2">Meses</mat-option>
+          <mat-option [value]="3">Años</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-md">
+      <mat-form-field appearance="outline" class="full-width-field">
+        <mat-label>Cantidad a agregar</mat-label>
+        <input matInput type="number" formControlName="units">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="calc-button" mat-flat-button color="primary" (click)="calculateDate()">Calcular fecha</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div *ngIf="calculatedDate !== undefined" class="date-message">
+        El resultado fue {{ calculatedDate | date:'dd MMM yyyy' }}
+      </div>
+    </div>
+  </div>
+</div>

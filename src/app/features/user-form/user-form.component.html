@@ -1,0 +1,72 @@
+<div class="form-title">Formulario</div>
+<div class="container" *ngIf="form !== undefined && form !== null" [formGroup]="form">
+  <div class="row">
+    <div class="col-md">
+      <mat-form-field appearance="outline" class="full-width-field">
+        <mat-label>Nombres</mat-label>
+        <input matInput formControlName="nombres" type="text">
+        <mat-error *ngIf="form.controls['nombres'].invalid && form.controls['nombres'].value.length > 0">Los nombres no pueden incluir espacios al final</mat-error>
+        <mat-error *ngIf="form.controls['nombres'].invalid && form.controls['nombres'].value.length === 0">Nombres es un campo requerido</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-md">
+      <mat-form-field appearance="outline" class="full-width-field">
+        <mat-label>Apellidos</mat-label>
+        <input matInput formControlName="apellidos" type="text">
+        <mat-error *ngIf="form.controls['apellidos'].invalid && form.controls['apellidos'].value.length > 0">Los apellidos no pueden incluir espacios al final</mat-error>
+        <mat-error *ngIf="form.controls['apellidos'].invalid && form.controls['apellidos'].value.length === 0">Apellidos es un campo requerido</mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md">
+      <mat-form-field appearance="outline" class="full-width-field">
+        <mat-label>¿Fumas?</mat-label>
+        <mat-select formControlName="fumas">
+          <mat-option [value]="true">Si</mat-option>
+          <mat-option [value]="false">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-md">
+      <mat-form-field appearance="outline" class="full-width-field">
+        <mat-label>¿Actualmente practicas lectura?</mat-label>
+        <mat-select formControlName="actualmentePracticasLectura">
+          <mat-option [value]="true">Si</mat-option>
+          <mat-option [value]="false">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row" *ngIf="form.controls['librosLeidosUltimosTresMeses'].enabled">
+    <div class="col">
+      <mat-form-field appearance="outline" class="full-width-field">
+        <mat-chip-list #chipList>
+          <mat-chip *ngFor="let libro of form.value.librosLeidosUltimosTresMeses" (removed)="remove(libro)">
+            {{libro}}
+            <button matChipRemove>
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip>
+          <input matInput [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="true" (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+        <mat-label>Libros leídos en los últimos tres meses</mat-label>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field appearance="outline" class="full-width-field">
+        <mat-label>Estado civil</mat-label>
+        <mat-select formControlName="estadoCivil">
+          <mat-option *ngFor="let civilStatus of civilStatuses" [value]="civilStatus.id">{{civilStatus.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="send-button" mat-flat-button color="primary" (click)="formValidity()">Verificar formulario</button>
+    </div>
+  </div>
+</div>

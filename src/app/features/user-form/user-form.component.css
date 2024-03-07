@@ -1,0 +1,5 @@
+.form-title {
+  font-size: calc(12px + 4vmin);
+  line-height: 1;
+  font-weight: bold;
+}
